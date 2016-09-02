@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+div.debug-wrapper,
+div.debug-wrapper * {
+    box-sizing: border-box;
+}
+
+div.debug-wrapper {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.debug-btn-title {
+    width: 98%;
+    margin: 0 1%;
+    padding: 5px;
+    background-color: #343434;
+    color: white;
+    text-align: center;
+}
+
+div.debug-btn {
+    width: 48%;
+    display: inline-block;
+    margin: 1%;
+    padding: 10px;
+    background-color: #eee;
+    text-align: center;
+}
+
+a.debug-btn,
+a.debug-btn:active,
+a.debug-btn:hover {
+    font-size: 12px;
+    text-decoration: none !important;
+}
+
+.debug-btn img {
+    width: 60%;
+    margin-left: 20%;
+    margin-bottom: 7px;
+    display: block;
+    max-width: 100px;
+    height: auto;
+    filter: grayscale(80%);
+    -webkit-transition: all 400ms ease;
+    -moz-transition: all 400ms ease;
+    -o-transition: all 400ms ease;
+    transition: all 400ms ease;
+}
+
+.debug-btn:hover img {
+    filter: grayscale(0%);
+}
