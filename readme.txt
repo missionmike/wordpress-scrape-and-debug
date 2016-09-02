@@ -24,3 +24,7 @@ N/A
 
 -Add dts-debugger.php, styles.css
 -Add site icons
+
+=v0.0.2=
+
+-Unescape apostrophes in readme.txt
