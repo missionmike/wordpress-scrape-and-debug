@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 div.debug-wrapper,
 div.debug-wrapper * {
     box-sizing: border-box;
@@ -12,11 +11,14 @@ div.debug-wrapper {
 
 .debug-btn-title {
     width: 98%;
+    border-bottom: 1px solid #eee;
     margin: 0 1%;
     padding: 5px;
-    background-color: #343434;
-    color: white;
-    text-align: center;
+    font-weight: normal;
+    background-color: #fefefe;
+    color: #777;
+    margin-top: 10px;
+    text-align: left;
 }
 
 div.debug-btn {
@@ -51,4 +53,34 @@ a.debug-btn:hover {
 
 .debug-btn:hover img {
     filter: grayscale(0%);
+}
+
+
+/** Admin Side **/
+
+.dts_settings_debuggers {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-position: center center;
+    background-attachment: local;
+    background-size: contain;
+}
+
+.dts_settings_debuggers label {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.dts_settings_debuggers.unchecked {
+    -moz-filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+    -o-filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+    -webkit-filter: grayscale(100%);
+    filter: gray;
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+    opacity: 0.7;
 }
