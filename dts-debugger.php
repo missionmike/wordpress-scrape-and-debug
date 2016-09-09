@@ -3,7 +3,7 @@
    Plugin Name: DT's Debugger
    Plugin URI: http://dtweb.design/debugger/
    Description: Simplify page debugging via Facebook Developer Tools, Google's Structured Data Testing Tool, PageSpeed Insights, W3C Validation (more to come). Found in page/post sidebar metabox.
-   Version: 0.0.1
+   Version: 0.0.3
    Author: Michael R. Dinerstein
    Author URI: http://dtweb.design/
    License: GPL2
