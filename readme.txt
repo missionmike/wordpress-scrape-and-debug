@@ -25,6 +25,11 @@ N/A
 
 == Changelog ==
 
+=v0.0.4=
+
+* Fix "Notice: Trying to get property of non-object in dts-debugger.php on line 224" notice (thrown when WP_DEBUG is set to true in wp-config.php)
+* Fix "Notice: Undefined variable: post in dts-debugger.php on line 224" notice (thrown when WP_DEBUG is set to true in wp-config.php)
+
 =v0.0.3=
 
 * Remove immediate redirect upon activation

@@ -221,7 +221,12 @@ add_action( 'add_meta_boxes', 'dts_dbggr_adding_metabox', 10, 2 );
  */
 function dts_dbggr_get_data() {
 
-	$permalink = rawurlencode(get_permalink($post->ID));
+    global $post;
+
+    if ( !isset( $post ) || !isset( $post->ID ) )
+        $permalink = 'javascript:;';
+    else
+    	$permalink = rawurlencode(get_permalink($post->ID));
    
     $debuggers = array(
 
