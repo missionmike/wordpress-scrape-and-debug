@@ -1,11 +1,11 @@
 <?php
    /*
    Plugin Name: DT's Debugger
-   Plugin URI: http://dtweb.design/debugger/
+   Plugin URI: https://dtweb.design/debugger/
    Description: Simplify page debugging via Facebook Developer Tools, Google's Structured Data Testing Tool, PageSpeed Insights, W3C Validation (more to come). Found in page/post sidebar metabox.
-   Version: 0.0.3
+   Version: 0.0.4
    Author: Michael R. Dinerstein
-   Author URI: http://dtweb.design/
+   Author URI: https://dtweb.design/
    License: GPL2
    */
    
