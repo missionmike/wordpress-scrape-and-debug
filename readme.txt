@@ -3,7 +3,7 @@ Contributors: MissionMike
 Tags: debug, facebook, google, open graph, w3c, validator, structured data, html, pagespeed
 Donate link: http://dtweb.design/debugger/
 Requires at least: 2.8
-Tested up to: 4.7
+Tested up to: 4.7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,6 +16,10 @@ This plugin was created to speed up SEO and Social Media testing via public tool
 
 DT's Debugger does **not** allow you to change any meta titles, keywords, open graph data, etc. It is only providing quick-links to debug the existing data and values set for those fields by other 3rd-party SEO plugins, or to test your general page speed and HTML validity.
 
+Links to quickly debug and check posts are found in the sidebar when editing posts, as well as in a column (Quicklinks) when listing posts or pages in admin.
+
+In Settings, debuggers can be shown or hidden, or omitted from particular post types.
+
 
 == Installation ==
 Download zip, install, activate!
@@ -25,17 +29,21 @@ N/A
 
 == Changelog ==
 
+=v0.1=
+
+* Added quicklinks to posts/pages and custom post type columns for faster debug checking of multiple posts
+
 =v0.0.4=
 
-* Fix "Notice: Trying to get property of non-object in dts-debugger.php on line 224" notice (thrown when WP_DEBUG is set to true in wp-config.php)
-* Fix "Notice: Undefined variable: post in dts-debugger.php on line 224" notice (thrown when WP_DEBUG is set to true in wp-config.php)
+* Fixed "Notice: Trying to get property of non-object in dts-debugger.php on line 224" notice (thrown when WP_DEBUG is set to true in wp-config.php)
+* Fixed "Notice: Undefined variable: post in dts-debugger.php on line 224" notice (thrown when WP_DEBUG is set to true in wp-config.php)
 
 =v0.0.3=
 
-* Remove immediate redirect upon activation
+* Removed immediate redirect upon activation
 * Set default values on activation (show all debuggers, show on all public post types)
-* Add settings to hide particular debuggers
-* Improve settings page (add icons)
+* Added settings to hide particular debuggers
+* Improved settings page (add icons)
 * Misc. bugfixes
 
 =v0.0.2=
@@ -44,8 +52,8 @@ N/A
 
 =v0.0.1=
 
-* Add dts-debugger.php, styles.css
-* Add site icons
+* Added dts-debugger.php, styles.css
+* Added site icons
 
 
 

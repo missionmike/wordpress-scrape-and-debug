@@ -55,6 +55,29 @@ a.debug-btn:hover {
     filter: grayscale(0%);
 }
 
+a.debug-btn.column {
+    float: left;
+    margin: 3px;
+    opacity: 0.35;
+    -webkit-transition: opacity 200ms ease;
+    -moz-transition: opacity 200ms ease;
+    -o-transition: opacity 200ms ease;
+    transition: opacity 200ms ease;
+}
+
+a.debug-btn.column:hover {
+    opacity: 1;
+}
+
+a.debug-btn.column img {
+    width: 20px;
+    height: auto;
+    filter: grayscale(100%);
+}
+
+a.debug-btn.column:hover img {
+    filter: grayscale(0%);
+}
 
 /** Admin Side **/
 

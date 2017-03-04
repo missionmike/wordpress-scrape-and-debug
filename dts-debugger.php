@@ -2,8 +2,8 @@
    /*
    Plugin Name: DT's Debugger
    Plugin URI: https://dtweb.design/debugger/
-   Description: Simplify page debugging via Facebook Developer Tools, Google's Structured Data Testing Tool, PageSpeed Insights, W3C Validation (more to come). Found in page/post sidebar metabox.
-   Version: 0.0.4
+   Description: Simplify page debugging via Facebook Developer Tools, Google's Structured Data Testing Tool, PageSpeed Insights, W3C Validation (more to come). Found in page/post sidebar metabox and edit posts/pages/CPT lists.
+   Version: 0.1
    Author: Michael R. Dinerstein
    Author URI: https://dtweb.design/
    License: GPL2
@@ -166,6 +166,77 @@ add_action( 'admin_menu', 'dts_dbggr_init_menu' );
 
 
 /**
+ * Add quicklinks column to posts and pages lists
+ */
+function dts_dbggr_post_modify_columns( $columns ) {
+	
+	$new_columns = array(
+		'dts_quicklinks' => __('DT\'s Quicklinks', 'dts-debugger' )
+	);
+
+	$filtered_columns = array_merge( $columns, $new_columns );
+
+	return $filtered_columns;
+}
+
+
+/**
+ * Populate quicklinks column
+ */
+function dts_dbggr_custom_column_content( $column ) {
+
+	global $post;
+   	$options = get_option( 'dts_settings' );
+
+	switch( $column ) :
+		case 'dts_quicklinks':
+			$debuggers = dts_dbggr_get_data();
+		
+		    foreach ( $debuggers as $debugger ) :
+
+		        if ( ! is_string( $debugger ) ) :
+
+		        	$setting_option = 'dts_debugger_' . $debugger['name'];
+
+		        	if ( !empty( $options ) && $options[$setting_option] !== '1' )
+		        		continue;
+
+		            echo '<a href="' . $debugger['url'] . '" target="_blank" class="debug-btn column" title="' . __('Click to check with: ', 'dts-debugger' ) . __( $debugger['title'], 'dts-debugger' ) . '">';
+		            
+		            echo '<img src="' . plugins_url( 'images/' . $debugger['image'], __FILE__ ) . '" alt="' . $debugger['title'] . '">';
+		            
+		            // _e( $debugger['title'], 'dts-debugger' );
+		            
+		            echo '</a>';
+		        endif;
+
+		    endforeach;
+		break;
+	endswitch;
+}
+
+
+/** 
+ * Scan for custom post types and init columns on init 
+ */
+function dts_dbggr_init_custom_columns() {
+    $post_types = get_post_types( '', 'objects' );
+    foreach ( $post_types as $post_type ) :
+
+    	$options = get_option( 'dts_settings' );
+    	$setting_option = 'dts_post_types_' . $post_type->name;
+
+    	if ( !empty( $options[$setting_option] ) && $options[$setting_option] === '1' )
+        	continue;
+
+    	add_filter( 'manage_' . $post_type->name . '_posts_columns', 'dts_dbggr_post_modify_columns' );
+		add_action( 'manage_' . $post_type->name . '_posts_custom_column', 'dts_dbggr_custom_column_content' );
+    endforeach;
+}
+add_action( 'admin_init', 'dts_dbggr_init_custom_columns' );
+
+
+/**
  * Add metabox to post/page editor
  */
 function dts_dbggr_adding_metabox( $post_type, $post ) {
@@ -173,7 +244,7 @@ function dts_dbggr_adding_metabox( $post_type, $post ) {
     $setting_option = 'dts_post_types_' . $post_type;
 
     if ( empty( $options[$setting_option] ) || $options[$setting_option] !== '1')
-        add_meta_box(   'sm-debug-post', __('DT\'s Debugger', 'dts-debugger'),  'dts_dbggr_social_media_metabox', null, 'side', 'core');
+        add_meta_box(   'sm-debug-post', __( 'DT\'s Debugger', 'dts-debugger' ),  'dts_dbggr_social_media_metabox', null, 'side', 'core' );
 }
 
 function dts_dbggr_social_media_metabox( $post ) {
@@ -201,7 +272,7 @@ function dts_dbggr_social_media_metabox( $post ) {
         		continue;
 
             echo '<div class="debug-btn">';
-            echo '<a href="' . $debugger['url'] . '" target="_blank" class="debug-btn">';
+            echo '<a href="' . $debugger['url'] . '" target="_blank" class="debug-btn" title="' . __('Click to check with: ', 'dts-debugger' ) . __( $debugger['title'], 'dts-debugger' ) . '">';
             echo '<img src="' . plugins_url( 'images/' . $debugger['image'], __FILE__ ) . '" alt="' . $debugger['title'] . '">';
             
             _e( $debugger['title'], 'dts-debugger' );
