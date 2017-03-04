@@ -3,7 +3,7 @@
    Plugin Name: DT's Debugger
    Plugin URI: https://dtweb.design/debugger/
    Description: Simplify page debugging via Facebook Developer Tools, Google's Structured Data Testing Tool, PageSpeed Insights, W3C Validation (more to come). Found in page/post sidebar metabox and edit posts/pages/CPT lists.
-   Version: 0.1
+   Version: 0.1.1
    Author: Michael R. Dinerstein
    Author URI: https://dtweb.design/
    License: GPL2
@@ -16,7 +16,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
  * Register and enqueue styles/scripts
  */
 function dts_dbggr_register_scripts() {
-    $version = '08302016';
+    $version = '03032017';
 
     wp_register_style( 'dts-style', plugins_url( 'css/styles.css', __FILE__ ), false, $version );
     wp_register_script( 'dts-scripts', plugins_url( 'js/dts-scripts.js', __FILE__ ), false, $version );
