@@ -29,6 +29,10 @@ N/A
 
 == Changelog ==
 
+=v0.1.1=
+
+* Fixed CSS version parameter to force stylesheet updates.
+
 =v0.1=
 
 * Added quicklinks to posts/pages and custom post type columns for faster debug checking of multiple posts
