@@ -3,7 +3,7 @@
    Plugin Name: DT's Debugger
    Plugin URI: https://dtweb.design/debugger/
    Description: Simplify page debugging via Facebook Developer Tools, Google's Structured Data Testing Tool, PageSpeed Insights, W3C Validation (more to come). Found in page/post sidebar metabox and edit posts/pages/CPT lists.
-   Version: 0.1.1
+   Version: 0.2
    Author: Michael R. Dinerstein
    Author URI: https://dtweb.design/
    License: GPL2
@@ -82,7 +82,7 @@ function dts_dbggr_init() {
 
    
     function dts_dbggr_settings_show_option() {
-    	echo '<p>If you don\'t wish to use a particular service, uncheck it here.</p>';
+    	echo '<p>If you wish to use a particular service, make sure it is checked here.</p>';
     }
 
     add_settings_section( 'dts_settings_debuggers', __( 'Available Debuggers/Tools', 'dts-debugger' ), 'dts_dbggr_settings_show_option', 'dts_settings' );
@@ -104,6 +104,12 @@ function dts_dbggr_init() {
                 $options[$setting_name] = '1';
             endif;
 
+            if ( empty( $options ) )
+            	$options = array();
+
+            if ( ! isset( $options[$setting_name] ) )
+            	$options[$setting_name] = 'unchecked';
+
             $dts_class = $options[$setting_name] === '1' ? 'checked' : 'unchecked';
 
             ?>
@@ -119,10 +125,10 @@ function dts_dbggr_init() {
 
 
     function dts_dbggr_settings_post_types_text() {
-        echo '<p>Select which post types <strong>hide</strong> the <em>DT\'s Debugger</em> panel:</p>';
+        echo '<p>Select which post types <strong>display</strong> the <em>DT\'s Debugger</em> panel and quicklinks:</p>';
     }
 
-    add_settings_section( 'dts_settings_post_types', __( 'Disable on Post Types:', 'dts-debugger' ), 'dts_dbggr_settings_post_types_text', 'dts_settings' );
+    add_settings_section( 'dts_settings_post_types', __( 'Show on Post Types:', 'dts-debugger' ), 'dts_dbggr_settings_post_types_text', 'dts_settings' );
 
     $post_types = get_post_types( '', 'objects' );
     foreach ( $post_types as $post_type ) :
@@ -132,6 +138,13 @@ function dts_dbggr_init() {
         $dts_settings_post_type_field = function() use ( $post_type ) {
             $options = get_option( 'dts_settings' );
             $setting_name = 'dts_post_types_' . $post_type->name;
+            
+            if ( empty( $options ) ) 
+            	$options = array();
+
+            if ( ! isset( $options[$setting_name] ) )
+            	$options[$setting_name] = false;
+
             $options[$setting_name] = isset( $options[$setting_name] ) ? $options[$setting_name] : false;
             ?>
             <input type="checkbox" name="dts_settings[<?= $setting_name; ?>]" value="1" <?php checked( $options[$setting_name], 1 ); ?> />
@@ -198,15 +211,11 @@ function dts_dbggr_custom_column_content( $column ) {
 
 		        	$setting_option = 'dts_debugger_' . $debugger['name'];
 
-		        	if ( !empty( $options ) && $options[$setting_option] !== '1' )
+		        	if ( ! empty( $options ) && ( ! isset( $options[$setting_option] ) || $options[$setting_option] !== '1' ) )
 		        		continue;
 
-		            echo '<a href="' . $debugger['url'] . '" target="_blank" class="debug-btn column" title="' . __('Click to check with: ', 'dts-debugger' ) . __( $debugger['title'], 'dts-debugger' ) . '">';
-		            
-		            echo '<img src="' . plugins_url( 'images/' . $debugger['image'], __FILE__ ) . '" alt="' . $debugger['title'] . '">';
-		            
-		            // _e( $debugger['title'], 'dts-debugger' );
-		            
+		            echo '<a href="' . $debugger['url'] . '" target="_blank" class="debug-btn column" title="' . __('Click to check with: ', 'dts-debugger' ) . __( $debugger['title'], 'dts-debugger' ) . '">';		           
+		            echo '<img src="' . plugins_url( 'images/' . $debugger['image'], __FILE__ ) . '" alt="' . $debugger['title'] . '">';                      
 		            echo '</a>';
 		        endif;
 
@@ -226,7 +235,7 @@ function dts_dbggr_init_custom_columns() {
     	$options = get_option( 'dts_settings' );
     	$setting_option = 'dts_post_types_' . $post_type->name;
 
-    	if ( !empty( $options[$setting_option] ) && $options[$setting_option] === '1' )
+    	if ( empty( $options[$setting_option] ) || $options[$setting_option] !== '1' )
         	continue;
 
     	add_filter( 'manage_' . $post_type->name . '_posts_columns', 'dts_dbggr_post_modify_columns' );
@@ -243,7 +252,7 @@ function dts_dbggr_adding_metabox( $post_type, $post ) {
     $options = get_option( 'dts_settings' );
     $setting_option = 'dts_post_types_' . $post_type;
 
-    if ( empty( $options[$setting_option] ) || $options[$setting_option] !== '1')
+    if ( ! empty( $options[$setting_option] ) && $options[$setting_option] === '1')
         add_meta_box(   'sm-debug-post', __( 'DT\'s Debugger', 'dts-debugger' ),  'dts_dbggr_social_media_metabox', null, 'side', 'core' );
 }
 
@@ -252,7 +261,7 @@ function dts_dbggr_social_media_metabox( $post ) {
     $options = get_option( 'dts_settings' );
     $setting_option = 'dts_post_types_' . $post->post_type;
 
-    if ( !empty( $options[$setting_option] ) && $options[$setting_option] === '1' )
+    if ( empty( $options[$setting_option] ) || $options[$setting_option] !== '1' )
         die();
 
     $debuggers = dts_dbggr_get_data();
@@ -268,7 +277,7 @@ function dts_dbggr_social_media_metabox( $post ) {
 
         	$setting_option = 'dts_debugger_' . $debugger['name'];
 
-        	if ( !empty( $options ) && $options[$setting_option] !== '1' )
+        	if ( ! empty( $options ) && ( ! isset( $options[$setting_option] ) || $options[$setting_option] !== '1' ) )
         		continue;
 
             echo '<div class="debug-btn">';
@@ -287,6 +296,34 @@ function dts_dbggr_social_media_metabox( $post ) {
 add_action( 'add_meta_boxes', 'dts_dbggr_adding_metabox', 10, 2 );
 
 
+/*
+ * On plugin update notice
+ */
+function dts_dbggr_update_notice() {
+
+	$options = get_option( 'dts_settings' );
+
+	if ( is_array( $options ) ) :
+
+		if ( ! isset( $options['update_notices'] ) )
+			$options['update_notices'] = array();
+
+		if ( ! isset( $options['update_notices']['1.2'] ) || $options['update_notices']['1.2'] === false ) :
+			?>
+			<div class="updated notice is-dismissible">
+				<p><?php _e( 'DT\'s Debugger has been updated and some <strong>settings have changed.</strong> Please review the <a href="' . esc_url( get_admin_url( null, 'options-general.php?page=dts-debugger' ) ) . '">' . __('plugin settings', 'General') . '</a> page.' ); ?></p>
+			</div>
+			<?php   				
+			$options['update_notices']['1.2'] = true;
+		endif;
+
+			update_option( 'dts_settings', $options );
+
+	endif;
+}
+add_action( 'admin_notices', 'dts_dbggr_update_notice' );
+
+
 /**
  * Internal data
  */
@@ -294,7 +331,7 @@ function dts_dbggr_get_data() {
 
     global $post;
 
-    if ( !isset( $post ) || !isset( $post->ID ) )
+    if ( ! isset( $post ) || ! isset( $post->ID ) )
         $permalink = 'javascript:;';
     else
     	$permalink = rawurlencode(get_permalink($post->ID));

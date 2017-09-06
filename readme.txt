@@ -29,6 +29,11 @@ N/A
 
 == Changelog ==
 
+=v0.2=
+
+* Reworded confusing settings page instructions and changed toggle settings to show/hide
+* Fixed undefined variable warnings and PHP notices in wp-admin
+
 =v0.1.1=
 
 * Fixed CSS version parameter to force stylesheet updates.
