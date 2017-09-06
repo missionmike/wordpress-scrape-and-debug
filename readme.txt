@@ -29,6 +29,10 @@ N/A
 
 == Changelog ==
 
+=v0.2.1=
+
+* Removed recurring 'check settings' notice
+
 =v0.2=
 
 * Reworded confusing settings page instructions and changed toggle settings to show/hide

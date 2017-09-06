@@ -3,7 +3,7 @@
    Plugin Name: DT's Debugger
    Plugin URI: https://dtweb.design/debugger/
    Description: Simplify page debugging via Facebook Developer Tools, Google's Structured Data Testing Tool, PageSpeed Insights, W3C Validation (more to come). Found in page/post sidebar metabox and edit posts/pages/CPT lists.
-   Version: 0.2
+   Version: 0.2.1
    Author: Michael R. Dinerstein
    Author URI: https://dtweb.design/
    License: GPL2
@@ -294,34 +294,6 @@ function dts_dbggr_social_media_metabox( $post ) {
     echo '</div>';
 }
 add_action( 'add_meta_boxes', 'dts_dbggr_adding_metabox', 10, 2 );
-
-
-/*
- * On plugin update notice
- */
-function dts_dbggr_update_notice() {
-
-	$options = get_option( 'dts_settings' );
-
-	if ( is_array( $options ) ) :
-
-		if ( ! isset( $options['update_notices'] ) )
-			$options['update_notices'] = array();
-
-		if ( ! isset( $options['update_notices']['1.2'] ) || $options['update_notices']['1.2'] === false ) :
-			?>
-			<div class="updated notice is-dismissible">
-				<p><?php _e( 'DT\'s Debugger has been updated and some <strong>settings have changed.</strong> Please review the <a href="' . esc_url( get_admin_url( null, 'options-general.php?page=dts-debugger' ) ) . '">' . __('plugin settings', 'General') . '</a> page.' ); ?></p>
-			</div>
-			<?php   				
-			$options['update_notices']['1.2'] = true;
-		endif;
-
-			update_option( 'dts_settings', $options );
-
-	endif;
-}
-add_action( 'admin_notices', 'dts_dbggr_update_notice' );
 
 
 /**
