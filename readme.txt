@@ -29,6 +29,10 @@ N/A
 
 == Changelog ==
 
+=v0.2.2=
+
+* Set WP page and post types to "display" in settings by default (user still needs to save settings upon activation, but they're auto-checked for quick saving)
+
 =v0.2.1=
 
 * Removed recurring 'check settings' notice

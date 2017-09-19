@@ -3,7 +3,7 @@
    Plugin Name: DT's Debugger
    Plugin URI: https://dtweb.design/debugger/
    Description: Simplify page debugging via Facebook Developer Tools, Google's Structured Data Testing Tool, PageSpeed Insights, W3C Validation (more to come). Found in page/post sidebar metabox and edit posts/pages/CPT lists.
-   Version: 0.2.1
+   Version: 0.2.2
    Author: Michael R. Dinerstein
    Author URI: https://dtweb.design/
    License: GPL2
@@ -142,8 +142,12 @@ function dts_dbggr_init() {
             if ( empty( $options ) ) 
             	$options = array();
 
-            if ( ! isset( $options[$setting_name] ) )
-            	$options[$setting_name] = false;
+            if ( ! isset( $options[$setting_name] ) ) :
+            	if ( $post_type->name === 'post' || $post_type->name === 'page' )
+            		$options[$setting_name] = '1';
+            	else
+	            	$options[$setting_name] = false;
+            endif;
 
             $options[$setting_name] = isset( $options[$setting_name] ) ? $options[$setting_name] : false;
             ?>
