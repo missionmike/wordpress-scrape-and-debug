@@ -1,18 +1,18 @@
 === DT's Debugger ===
 Contributors: MissionMike
-Tags: debug, facebook, google, open graph, w3c, validator, structured data, html, pagespeed
+Tags: debug, facebook, google, open graph, w3c, validator, structured data, html, pagespeed, amp
 Donate link: https://dtweb.design/debugger/
 Requires at least: 2.8
 Tested up to: 4.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Simplify page debugging via Facebook Developer Tools, Google's Structured Data Testing Tool, PageSpeed Insights, W3C Validation.
+Simplify page debugging via Facebook Developer Tools, Google's Structured Data Testing Tool, PageSpeed Insights, W3C Validation, and now Google AMP Test.
 
 == Description ==
 #About DT's Debugger
 
-This plugin was created to speed up SEO and Social Media testing via public tools provided by Google, W3C, and Facebook. Found in page/post sidebar metabox. Some services (like Facebook Debugger) require an account to use.
+This plugin was created to speed up SEO and Social Media testing via public tools provided by Google, W3C, and Facebook. Found in page/post sidebar metabox. Some services (like Facebook Debugger) require an account with the respective service to use (i.e., a Facebook account).
 
 DT's Debugger does **not** allow you to change any meta titles, keywords, open graph data, etc. It is only providing quick-links to debug the existing data and values set for those fields by other 3rd-party SEO plugins, or to test your general page speed and HTML validity.
 
@@ -28,6 +28,10 @@ Download zip, install, activate!
 N/A
 
 == Changelog ==
+
+=v0.3=
+
+* Added Google AMP debugger. If page/post has valid meta tag for amphtml, Google's AMP Test will request to validate it. Check DT's Debugger settings to show the AMP Test option.
 
 =v0.2.2=
 

@@ -2,8 +2,8 @@
    /*
    Plugin Name: DT's Debugger
    Plugin URI: https://dtweb.design/debugger/
-   Description: Simplify page debugging via Facebook Developer Tools, Google's Structured Data Testing Tool, PageSpeed Insights, W3C Validation (more to come). Found in page/post sidebar metabox and edit posts/pages/CPT lists.
-   Version: 0.2.2
+   Description: Simplify page debugging via Facebook Developer Tools, Google's Structured Data Testing Tool, PageSpeed Insights, W3C Validation, Google AMP Test. Found in page/post sidebar metabox and edit posts/pages/CPT lists.
+   Version: 0.3
    Author: Michael R. Dinerstein
    Author URI: https://dtweb.design/
    License: GPL2
@@ -342,6 +342,15 @@ function dts_dbggr_get_data() {
             'url'   => 'https://validator.w3.org/nu/?doc=' . $permalink,
             'title' => 'Nu Html Checker (W3C)',
             'image' => 'w3c.png'
+        ),
+
+        'Specialized',
+
+        array(
+            'name'  => 'amp',
+            'url'   => 'https://search.google.com/test/amp?url=' . $permalink,
+            'title' => 'Google AMP Test',
+            'image' => 'amp.png'
         )
     );
 
