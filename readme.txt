@@ -31,7 +31,7 @@ N/A
 
 =v0.3=
 
-* Added Google AMP debugger. If page/post has valid meta tag for amphtml, Google's AMP Test will request to validate it. Check DT's Debugger settings to show the AMP Test option.
+* Added Google AMP debugger. If page/post has valid <link rel="amphtml" src="..."> tag, Google's AMP Test will request to validate it. Check DT's Debugger settings to show the AMP Test option.
 
 =v0.2.2=
 
