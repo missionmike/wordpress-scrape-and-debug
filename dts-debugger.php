@@ -5,7 +5,7 @@
    Description: Simplify page debugging via Facebook Developer Tools, Google's Structured Data Testing Tool, PageSpeed Insights, W3C Validation, Google AMP Test. Found in page/post sidebar metabox and edit posts/pages/CPT lists.
    Version: 0.3
    Author: Michael R. Dinerstein
-   Author URI: https://dtweb.design/
+   Author URI: https://www.linkedin.com/in/michaeldinerstein/
    License: GPL2
    */
    
