@@ -3,7 +3,7 @@
 Plugin Name: DT's Debugger
 Plugin URI: https://dtweb.design/debugger/
 Description: Simplify page debugging via Facebook Developer Tools, Google's Structured Data Testing Tool, PageSpeed Insights, W3C Validation, Google AMP Test. Found in page/post sidebar metabox and edit posts/pages/CPT lists.
-Version: 0.4
+Version: 0.4.1
 Author: Michael R. Dinerstein
 Author URI: https://www.linkedin.com/in/michaeldinerstein/
 License: GPL2
@@ -375,7 +375,7 @@ function dts_dbggr_get_data() {
 
         array(
         	'name'	=> 'facebook',
-            'url'   => 'https://developers.facebook.com/tools/debug/og/object?q=' . $permalink,
+            'url'   => 'https://developers.facebook.com/tools/debug/sharing/?q=' . $permalink,
             'title' => 'Open Graph Object Debugger',
             'image' => 'facebook.png'
         ),

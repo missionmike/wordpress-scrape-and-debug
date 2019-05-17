@@ -29,6 +29,14 @@ N/A
 
 == Changelog ==
 
+=v0.4.1=
+
+* Updated Facebook scraper URL
+
+=v0.4=
+
+* Code Cleanup
+
 =v0.3=
 
 * Added Google AMP debugger. If page/post has valid <link rel="amphtml" src="..."> tag, Google's AMP Test will request to validate it. Check DT's Debugger settings to show the AMP Test option.
