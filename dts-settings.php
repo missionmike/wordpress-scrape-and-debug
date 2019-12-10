@@ -8,7 +8,9 @@
 <form method="post" action="options.php"> 
 
 <?php
-    settings_fields( 'dts_settings' );
+    submit_button();
+
+	settings_fields( 'dts_settings' );
 
     do_settings_sections( 'dts_settings' );
 

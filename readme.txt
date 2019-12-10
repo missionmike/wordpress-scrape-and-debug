@@ -3,7 +3,7 @@ Contributors: MissionMike
 Tags: debug, facebook, google, open graph, w3c, validator, structured data, html, pagespeed, amp
 Donate link: https://dtweb.design/debugger/
 Requires at least: 2.8
-Tested up to: 5.1
+Tested up to: 5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ Simplify page debugging via Facebook Developer Tools, Google's Structured Data T
 == Description ==
 #About DT's Debugger
 
-This plugin was created to speed up SEO and Social Media testing via public tools provided by Google, W3C, and Facebook. Found in page/post sidebar metabox. Some services (like Facebook Debugger) require an account with the respective service to use (i.e., a Facebook account).
+This plugin was created to speed up SEO and Social Media testing via public tools provided by Google, W3C, and Facebook. Found in page/post sidebar metabox. Some services (like Facebook's Opengraph Debugger) require an account with the respective service to use (i.e., a Facebook account).
 
 DT's Debugger does **not** allow you to change any meta titles, keywords, open graph data, etc. It is only providing quick-links to debug the existing data and values set for those fields by other 3rd-party SEO plugins, or to test your general page speed and HTML validity.
 
@@ -29,13 +29,9 @@ N/A
 
 == Changelog ==
 
-=v0.4.1=
+=v0.4.3=
 
-* Updated Facebook scraper URL
-
-=v0.4=
-
-* Code Cleanup
+* Code cleanup
 
 =v0.3=
 
