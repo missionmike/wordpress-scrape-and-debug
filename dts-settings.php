@@ -1,21 +1,21 @@
 <?php
-    defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
+defined('ABSPATH') or die('No script kiddies please!');
 ?>
 
 <div class="wrap">
-<h2>DT's Debugger Settings</h2>
+	<h2>DT's Debugger Settings</h2>
 
-<form method="post" action="options.php"> 
+	<form method="post" action="options.php">
 
-<?php
-    submit_button();
+		<?php
+		submit_button();
 
-	settings_fields( 'dts_settings' );
+		settings_fields('dts_settings');
 
-    do_settings_sections( 'dts_settings' );
+		do_settings_sections('dts_settings');
 
-    submit_button();
-?>
+		submit_button();
+		?>
 
-</form>
+	</form>
 </div>

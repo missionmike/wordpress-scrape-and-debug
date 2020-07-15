@@ -3,7 +3,7 @@ Contributors: MissionMike
 Tags: debug, facebook, google, open graph, w3c, validator, structured data, html, pagespeed, amp
 Donate link: https://dtweb.design/debugger/
 Requires at least: 2.8
-Tested up to: 5.3
+Tested up to: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,13 @@ Download zip, install, activate!
 
 == Frequently Asked Questions ==
 N/A
+
+=v0.5.0=
+
+* Add new Google Rich Results Test support
+* Deprecate Google Structured Data Testing tool
+* Style updates
+* Code cleanup
 
 == Changelog ==
 
