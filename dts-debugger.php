@@ -1,11 +1,11 @@
 <?php
 /*
-Plugin Name: DT's Debugger
-Plugin URI: https://dtweb.design/debugger/
-Description: Simplify page debugging via Facebook Developer Tools, Google's Structured Data Testing Tool, PageSpeed Insights, W3C Validation, Google AMP Test. Found in page/post sidebar metabox and edit posts/pages/CPT lists.
-Version: 0.5.0
-Author: Michael R. Dinerstein
-Author URI: https://www.linkedin.com/in/michaeldinerstein/
+Plugin Name: Scrape and Debug
+Plugin URI: https://www.missionmike.dev/scrape-and-debug-wordpress-plugin/
+Description: Simplify page debugging via Facebook Sharing Debugger, LinkedIn Post Inspector, Google's Structured Data Testing Tool and Rich Results Test, PageSpeed Insights, W3C Validation, and Google AMP Test.
+Version: 0.5.1
+Author: Michael R. Dinerstein (Mission Mike)
+Author URI: https://www.missionmike.dev/
 License: GPL2
 */
 
@@ -167,7 +167,7 @@ function dts_dbggr_init()
 
 	function dts_dbggr_settings_post_types_text()
 	{
-		echo '<p>Select which post types <strong>display</strong> the <em>DT\'s Debugger</em> panel and quicklinks:</p>';
+		echo '<p>Select which post types <strong>display</strong> the <em>Scrape and Debug</em> panel and icon links:</p>';
 	}
 
 	add_settings_section('dts_settings_post_types', __('Show on Post Types:', 'dts-debugger'), 'dts_dbggr_settings_post_types_text', 'dts_settings');
@@ -249,7 +249,7 @@ function dts_dbggr_settings_validate($input)
 
 
 /**
- * Add DT's Debugger to Settings Menu
+ * Add Scrape and Debug to Settings Menu
  */
 function dts_dbggr_init_menu()
 {
@@ -258,7 +258,7 @@ function dts_dbggr_init_menu()
 	{
 		include(plugin_dir_path(__FILE__) . 'dts-settings.php');
 	}
-	add_options_page(__('DT\'s Debugger', 'dts-debugger'), __('DT\'s Debugger', 'dts-debugger'), 'manage_options', 'dts-debugger', 'dts_dbggr_options_page');
+	add_options_page(__('Scrape and Debug', 'dts-debugger'), __('Scrape and Debug', 'dts-debugger'), 'manage_options', 'dts-debugger', 'dts_dbggr_options_page');
 }
 add_action('admin_menu', 'dts_dbggr_init_menu');
 
@@ -271,7 +271,7 @@ function dts_dbggr_post_modify_columns($columns)
 {
 
 	$new_columns = array(
-		'dts_quicklinks' => __('Debug Quicklinks', 'dts-debugger')
+		'dts_quicklinks' => __('Scrape and Debug', 'dts-debugger')
 	);
 
 	$filtered_columns = array_merge($columns, $new_columns);
@@ -363,7 +363,7 @@ function dts_dbggr_adding_metabox($post_type, $post)
 
 	if (!empty($options[$setting_option]) && $options[$setting_option] === '1') :
 
-		add_meta_box('sm-debug-post', __('DT\'s Debugger', 'dts-debugger'),  'dts_dbggr_social_media_metabox', null, 'side', 'core');
+		add_meta_box('sm-debug-post', __('Scrape and Debug', 'dts-debugger'),  'dts_dbggr_social_media_metabox', null, 'side', 'core');
 
 	endif;
 }
@@ -444,20 +444,14 @@ function dts_dbggr_get_data()
 		array(
 			'name'	=> 'facebook',
 			'url'   => 'https://developers.facebook.com/tools/debug/sharing/?q=' . $permalink,
-			'title' => 'Open Graph Object Debugger',
-			'image' => 'facebook.png'
+			'title' => 'Facebook Sharing Debugger',
+			'image' => 'facebook.png',
 		),
 		array(
-			'name'	=> 'google-rich',
-			'url'   => 'https://search.google.com/test/rich-results?url=' . $permalink,
-			'title' => 'Rich Results Test',
-			'image' => 'google.png'
-		),
-		array(
-			'name'	=> 'google',
-			'url'   => 'https://search.google.com/structured-data/testing-tool/u/0/?hl=en#url=' . $permalink,
-			'title' => 'Structured Data Testing Tool (Deprecated)',
-			'image' => 'google-deprecated.png'
+			'name'	=> 'linkedin',
+			'url'	=> 'https://www.linkedin.com/post-inspector/inspect/' . $permalink,
+			'title' => 'LinkedIn Post Inspector',
+			'image' => 'linkedin.png',
 		),
 
 		'Performance',
@@ -465,18 +459,30 @@ function dts_dbggr_get_data()
 		array(
 			'name'	=> 'pagespeed',
 			'url'   => 'https://developers.google.com/speed/pagespeed/insights/?url=' . $permalink,
-			'title' => 'PageSpeed Insights',
-			'image' => 'pagespeed.png'
+			'title' => 'Google PageSpeed Insights',
+			'image' => 'pagespeed.png',
 		),
 		array(
 			'name'	=> 'w3c',
 			'url'   => 'https://validator.w3.org/nu/?doc=' . $permalink,
 			'title' => 'Nu Html Checker (W3C)',
-			'image' => 'w3c.png'
+			'image' => 'w3c.png',
 		),
 
-		'Specialized',
+		'SEO',
 
+		array(
+			'name'	=> 'google-rich',
+			'url'   => 'https://search.google.com/test/rich-results?url=' . $permalink,
+			'title' => 'Rich Results Test',
+			'image' => 'google.png',
+		),
+		array(
+			'name'	=> 'google',
+			'url'   => 'https://search.google.com/structured-data/testing-tool/u/0/?hl=en#url=' . $permalink,
+			'title' => 'Structured Data Testing Tool (Deprecated)',
+			'image' => 'google-deprecated.png',
+		),
 		array(
 			'name'  => 'amp',
 			'url'   => 'https://search.google.com/test/amp?url=' . $permalink,

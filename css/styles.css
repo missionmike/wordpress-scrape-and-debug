@@ -13,7 +13,7 @@ div.debug-wrapper {
 	width: 98%;
 	border-bottom: 1px solid #eee;
 	margin: 0 1%;
-	padding: 5px;
+	padding: 0;
 	font-weight: normal;
 	background-color: #fefefe;
 	color: #777;
@@ -25,8 +25,8 @@ div.debug-btn {
 	width: 48%;
 	display: inline-block;
 	margin: 1%;
-	padding: 10px;
-	background-color: #eee;
+	padding: 0;
+	background-color: transparent;
 	text-align: center;
 }
 
@@ -53,8 +53,8 @@ a.debug-btn:hover {
 }
 
 .debug-btn img:hover {
-	-webkit-transform: scale(1.2);
-	transform: scale(1.2);
+	-webkit-transform: scale(1.05);
+	transform: scale(1.05);
 }
 
 a.debug-btn.column {
