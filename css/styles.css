@@ -10,20 +10,21 @@ div.debug-wrapper {
 }
 
 .debug-btn-title {
-	width: 98%;
+	position: relative;
+	display: block;
+	clear: both;
+	width: 100%;
 	border-bottom: 1px solid #eee;
-	margin: 0 1%;
+	margin: 30px 0 10px 0;
 	padding: 0;
-	font-weight: normal;
-	background-color: #fefefe;
-	color: #777;
-	margin-top: 10px;
-	text-align: left;
+	font-weight: bold;
+	text-align: center;
+	color: #aaa !important;
 }
 
 div.debug-btn {
 	width: 48%;
-	display: inline-block;
+	float: left;
 	margin: 1%;
 	padding: 0;
 	background-color: transparent;
@@ -77,14 +78,20 @@ a.debug-btn.column img {
 }
 
 /** Admin Side **/
+.dts_settings_debuggers_wrapper {
+	display: block;
+	clear: both;
+}
 
 .dts_settings_debuggers {
 	position: relative;
+	float: left;
 	width: 50px;
 	height: 50px;
 	background-position: center center;
 	background-attachment: local;
 	background-size: contain;
+	margin-right: 25px;
 }
 
 .dts_settings_debuggers label {
@@ -103,4 +110,53 @@ a.debug-btn.column img {
 	filter: gray;
 	filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
 	opacity: 0.7;
+}
+
+#dts-debugger-settings-wrap {
+	display: relative;
+	width: 100%;
+	padding: 25px;
+	background: white;
+}
+
+#dts-debugger-settings-wrap input.disabled {
+	pointer-events: none;
+	cursor: default;
+}
+
+#dts-debugger-settings-wrap table {
+	display: block;
+	width: 100%;
+	background: white;
+}
+
+#dts-debugger-settings-wrap table tr {
+	display: block;
+	max-width: 600px;
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #fafafa;
+}
+
+#dts-debugger-settings-wrap table th:first-child {
+	padding: 0;
+}
+
+#dts-debugger-settings-wrap table td {
+	display: block;
+	padding-left: 0;
+	margin-right: 25px;
+}
+
+#dts-debugger-settings-wrap .dts_debugger_select_post_types ~ table th {
+	width: auto;
+	display: inline-block;
+}
+
+#dts-debugger-settings-wrap .dts_debugger_select_post_types ~ table td {
+	float: left;
+	vertical-align: top;
+	margin-top: -1.2em;
+	margin-right: 0;
+	margin-bottom: 0;
 }

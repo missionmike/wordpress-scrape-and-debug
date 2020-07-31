@@ -27,6 +27,11 @@ Download zip, install, activate!
 == Frequently Asked Questions ==
 N/A
 
+=v0.5.2=
+
+* Improved admin UI
+* Added notification bar on activation directing user to settings page if no saved settings are found
+
 =v0.5.1=
 
 * Added support for LinkedIn Post Inspector
