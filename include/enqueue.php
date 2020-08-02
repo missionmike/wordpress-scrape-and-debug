@@ -12,7 +12,7 @@ defined('ABSPATH') or die('No script kiddies please!');
 function dts_dbggr_register_scripts()
 {
 
-    $version = '20200715';
+    $version = '20200731';
 
     wp_register_style('dts-style', plugins_url('css/styles.css', dirname(__FILE__)), false, $version);
     wp_register_script('dts-scripts', plugins_url('js/dts-scripts.js', dirname(__FILE__)), false, $version);

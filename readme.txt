@@ -27,6 +27,10 @@ Download zip, install, activate!
 == Frequently Asked Questions ==
 N/A
 
+=v0.5.3=
+
+* Force loading of new admin styles in settings page
+
 =v0.5.2=
 
 * Improved admin UI
