@@ -3,7 +3,7 @@ Contributors: MissionMike
 Tags: debug, facebook, google, open graph, w3c, validator, structured data, html, pagespeed, amp
 Donate link: https://www.missionmike.dev/scrape-and-debug-wordpress-plugin/
 Requires at least: 2.8
-Tested up to: 5.4
+Tested up to: 5.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
