@@ -10,7 +10,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Simplify page debugging via Facebook Sharing Debugger, LinkedIn Post Inspector, Google's Structured Data Testing Tool and Rich Results Test, PageSpeed Insights, W3C Validation, and Google AMP Test.
 
 == Description ==
-#About Scrape and Debug
+#Preview your posts and pages on social media. Validate your pages' HTML with W3C's Validator, or check PageSpeed with Google's PageSpeed Insights. Access these tools quickly from within wp-admin, without needing to copy/paste multiple URLs each time to see your results. This utility can seriously speed up your publishing process, especially if you're concerned with how your new posts appear on social media.
 
 This plugin was created to speed up SEO and Social Media testing via public tools provided by Google, W3C, Facebook, and LinkedIn. Found in page/post sidebar metabox. Some services (like Facebook's Sharing Debugger) require an account with the respective service to use (i.e., a free Facebook account).
 
