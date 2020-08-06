@@ -1,6 +1,6 @@
 === Scrape and Debug ===
 Contributors: MissionMike
-Tags: debug, facebook, google, open graph, w3c, validator, structured data, html, pagespeed, amp
+Tags: facebook, google, linkedin, preview, opengraph, validate, structured data, html, pagespeed, amp
 Donate link: https://www.missionmike.dev/scrape-and-debug-wordpress-plugin/
 Requires at least: 2.8
 Tested up to: 5.5
