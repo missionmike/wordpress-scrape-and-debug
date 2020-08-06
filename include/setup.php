@@ -17,7 +17,7 @@ function dts_dbggr_action_links($actions, $plugin_file)
 	static $plugin;
 
 	if (!isset($plugin)) {
-		$plugin = plugin_basename(__FILE__);
+		$plugin = DTS_DBGGR_PLUGIN_BASENAME;
 	}
 
 	if ($plugin === $plugin_file) :
