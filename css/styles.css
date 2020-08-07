@@ -114,6 +114,8 @@ a.debug-btn.column img {
 
 #dts-debugger-settings-wrap {
 	display: relative;
+	box-sizing: border-box;
+	margin: 0;
 	width: 100%;
 	padding: 25px;
 	background: white;
