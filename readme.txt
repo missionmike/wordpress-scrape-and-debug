@@ -22,6 +22,9 @@ Links to quickly debug and check posts are found in the sidebar when editing pos
 
 In Settings, debuggers can be shown or hidden, or omitted from particular post types.
 
+Watch this video to learn more:
+
+https://www.youtube.com/watch?v=fe1gcKVcX6o
 
 == Installation ==
 Download zip, install, activate!
