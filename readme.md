@@ -1,16 +1,10 @@
 # Scrape and Debug
 
-Contributors: MissionMike
-
-Tags: facebook, google, linkedin, preview, opengraph, validate, structured data, html, pagespeed, amp
-
-Donate link: https://www.missionmike.dev/scrape-and-debug-wordpress-plugin/
-
 Simplify page debugging via Facebook Sharing Debugger, LinkedIn Post Inspector, Google's Structured Data Testing Tool and Rich Results Test, PageSpeed Insights, W3C Validation, and Google AMP Test.
 
 ## Description
 
-### About Scrape && Debug
+### About Scrape and Debug
 
 Preview your posts and pages on social media. Validate your pages' HTML with W3C's Validator, or check PageSpeed with Google's PageSpeed Insights. Access these tools quickly from within wp-admin, without needing to copy/paste multiple URLs each time to see your results. This utility can seriously speed up your publishing process, especially if you're concerned with how your new posts appear on social media.
 
@@ -24,3 +18,5 @@ In Settings, debuggers can be shown or hidden, or omitted from particular post t
 
 Watch this video to learn more:
 [![Scrape and Debug WordPress Plugin Overview](https://tools.missionmike.dev/thumbnail-generator/fe1gcKVcX6o.jpg?width=1024)](https://www.youtube.com/watch?v=fe1gcKVcX6o "Scrape and Debug WordPress Plugin Overview - Click to Watch!")
+
+Donate link: https://www.missionmike.dev/scrape-and-debug-wordpress-plugin/
