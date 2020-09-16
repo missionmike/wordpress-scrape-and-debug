@@ -1,12 +1,10 @@
 # Scrape and Debug
 
 Contributors: MissionMike
+
 Tags: facebook, google, linkedin, preview, opengraph, validate, structured data, html, pagespeed, amp
+
 Donate link: https://www.missionmike.dev/scrape-and-debug-wordpress-plugin/
-Requires at least: 2.8
-Tested up to: 5.5
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Simplify page debugging via Facebook Sharing Debugger, LinkedIn Post Inspector, Google's Structured Data Testing Tool and Rich Results Test, PageSpeed Insights, W3C Validation, and Google AMP Test.
 
