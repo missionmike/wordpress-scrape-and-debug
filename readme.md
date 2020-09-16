@@ -17,6 +17,7 @@ Links to quickly debug and check posts are found in the sidebar when editing pos
 In Settings, debuggers can be shown or hidden, or omitted from particular post types.
 
 Watch this video to learn more:
+
 [![Scrape and Debug WordPress Plugin Overview](https://tools.missionmike.dev/thumbnail-generator/fe1gcKVcX6o.jpg?width=1024)](https://www.youtube.com/watch?v=fe1gcKVcX6o "Scrape and Debug WordPress Plugin Overview - Click to Watch!")
 
 Donate link: https://www.missionmike.dev/scrape-and-debug-wordpress-plugin/
