@@ -2,6 +2,8 @@
 
 Simplify page debugging via Facebook Sharing Debugger, LinkedIn Post Inspector, Google's Structured Data Testing Tool and Rich Results Test, PageSpeed Insights, W3C Validation, and Google AMP Test.
 
+View on wordpress.org: https://wordpress.org/plugins/dts-debugger/
+
 ## Description
 
 ### About Scrape and Debug
