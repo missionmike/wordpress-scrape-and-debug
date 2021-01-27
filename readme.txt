@@ -32,6 +32,10 @@ Download zip, install, activate!
 == Frequently Asked Questions ==
 N/A
 
+=v0.5.6=
+
+* Updated metabox style
+
 =v0.5.3=
 
 * Force loading of new admin styles in settings page
