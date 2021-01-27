@@ -14,11 +14,10 @@ div.debug-wrapper {
 	display: block;
 	clear: both;
 	width: 100%;
-	border-bottom: 1px solid #eee;
-	margin: 30px 0 10px 0;
-	padding: 0;
+	border-top: 1px solid #eee;
+	padding: 5px 0 0 0;
+	margin: 10px 0;
 	font-weight: bold;
-	text-align: center;
 	color: #aaa !important;
 }
 
@@ -28,7 +27,6 @@ div.debug-btn {
 	margin: 1%;
 	padding: 0;
 	background-color: transparent;
-	text-align: center;
 }
 
 a.debug-btn,
@@ -36,11 +34,12 @@ a.debug-btn:active,
 a.debug-btn:hover {
 	font-size: 12px;
 	text-decoration: none !important;
+	max-width: 100%;
 }
 
 .debug-btn img {
 	width: 60%;
-	margin-left: 20%;
+	margin-left: 0;
 	margin-bottom: 7px;
 	display: block;
 	max-width: 100px;

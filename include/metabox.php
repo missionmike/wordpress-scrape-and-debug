@@ -43,7 +43,7 @@ function dts_dbggr_social_media_metabox($post)
 		if (is_string($debugger)) :
 
 			echo '<br style="clear:both;">';
-			echo '<h3 class="debug-btn-title">' . $debugger . ':</h3>';
+			echo '<h3 class="debug-btn-title">' . $debugger . '</h3>';
 
 		else :
 
