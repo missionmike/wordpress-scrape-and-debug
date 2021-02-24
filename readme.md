@@ -21,5 +21,3 @@ In Settings, debuggers can be shown or hidden, or omitted from particular post t
 Watch this video to learn more:
 
 [![Scrape and Debug WordPress Plugin Overview](https://tools.missionmike.dev/video-placeholder-generator/thumbnails/fe1gcKVcX6o.jpg?width=1024)](https://www.youtube.com/watch?v=fe1gcKVcX6o "Scrape and Debug WordPress Plugin Overview - Click to Watch!")
-
-Donate link: https://www.missionmike.dev/scrape-and-debug-wordpress-plugin/
