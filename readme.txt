@@ -3,7 +3,7 @@ Contributors: MissionMike
 Tags: facebook, google, linkedin, preview, opengraph, validate, structured data, html, pagespeed, amp
 Donate link: https://www.missionmike.dev/scrape-and-debug-wordpress-plugin/
 Requires at least: 2.8
-Tested up to: 5.5
+Tested up to: 5.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
